@@ -1,1 +1,42 @@
-# faruh
+E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.example.test6, PID: 30313
+    java.net.ConnectException: Failed to connect to jsonplaceholder.typicode.com/172.67.131.170:443
+        at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+        at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+        at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+        at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+        at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+        at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+        at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+        at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+        at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+        at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+        at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+        at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+        at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+        at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+        at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+        at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+        at java.lang.Thread.run(Thread.java:818)
+    	Suppressed: java.net.SocketTimeoutException: SSL handshake timed out
+        at com.android.org.conscrypt.NativeCrypto.SSL_do_handshake(Native Method)
+        at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake(OpenSSLSocketImpl.java:347)
+        at okhttp3.internal.connection.RealConnection.connectTls(RealConnection.kt:379)
+        at okhttp3.internal.connection.RealConnection.establishProtocol(RealConnection.kt:337)
+        at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:209)
+        		... 17 more
+     Caused by: java.net.ConnectException: failed to connect to jsonplaceholder.typicode.com/172.67.131.170 (port 443) after 10000ms: isConnected failed: ECONNREFUSED (Connection refused)
+        at libcore.io.IoBridge.isConnected(IoBridge.java:238)
+        at libcore.io.IoBridge.connectErrno(IoBridge.java:171)
+        at libcore.io.IoBridge.connect(IoBridge.java:122)
+        at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:183)
+        at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:456)
+        at java.net.Socket.connect(Socket.java:882)
+        at okhttp3.internal.platform.AndroidPlatform.connectSocket(AndroidPlatform.kt:63)
+        at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+        	... 18 more
+     Caused by: android.system.ErrnoException: isConnected failed: ECONNREFUSED (Connection refused)
+        at libcore.io.IoBridge.isConnected(IoBridge.java:223)
+        	... 25 more
